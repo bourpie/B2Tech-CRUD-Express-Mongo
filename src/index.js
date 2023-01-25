@@ -3,12 +3,21 @@ const express = require('express');
 const app = express();
 const Blog = require('./db/models/blog');
 const Plum = require('./db/models/plumitif');
+const Dossier = require('./db/models/dossier');
 
 app.use(express.json());
 
 app.get('/plumitifs', (req, res) => {
-    Plum.find({}).limit(20).then(sejs => {
+    Plum.find({}).then(sejs => {
         res.send(sejs);
+    }).catch(error => {
+        res.status(400).send(error)
+    });
+})
+
+app.get('/dossiers', (req, res) => {
+    Dossier.find({}).then(dossiers => {
+        res.send(dossiers);
     }).catch(error => {
         res.status(400).send(error)
     });
