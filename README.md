@@ -1,8 +1,12 @@
 # NodeJS, Express, Mongoose and MongoDB
 
-Code permettant d'alimenter une collection MongoDb à partir d'une API externe.
+Alimenter une collection MongoDb à partir d'une API externe.
 
 TODO: ajouter un céduleur
+
+**Usage**
+1. Installer MongoDb
+2. Exécuter `node src/importSej.js`
 
 **Technologies :**
 - Node.js
