@@ -6,7 +6,11 @@ const Dossier = require('./db/models/dossier');
 
 app.use(express.json());
 
-// Data locale
+/**
+ * Data locale
+ * http://localhost:4000/plumitifs
+ * renvoie la collection MongoDb plumitifs/sejs
+ */
 app.get('/plumitifs', (req, res) => {
     Plum.find({}).then(sejs => {
         res.send(sejs);
@@ -15,7 +19,11 @@ app.get('/plumitifs', (req, res) => {
     });
 })
 
-// Mock API SEJ
+/**
+ * Mock pour simuler l'API SEJ
+ * http://localhost:4000/dossier
+ * renvoie la collection MongoDb plumitifs/dossiers
+ */
 app.get('/dossiers', (req, res) => {
     Dossier.find({}).then(dossiers => {
         res.send(dossiers);
