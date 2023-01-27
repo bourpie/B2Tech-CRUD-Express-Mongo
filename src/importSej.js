@@ -1,16 +1,12 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://127.0.0.1:27017/plumitifs').then(() => {
-    console.log("Connection to BD successfull");
-   /**
-    * TODO
-    * Vérifier si la collection existe avant de la supprimer
-    */
+    console.log("Connection à MongoDb réussie");
     mongoose.connection.db.dropCollection('sejs');
     console.log("Collection sejs supprimée"); 
     
 }).catch((error) => {
-    console.log("Oups ! Une erreur est survenue", error)
+    console.log("Une erreur est survenue lors de la connection à MongoDb", error)
 });
 
 
@@ -37,7 +33,6 @@ url.map(async url => {
             juridiction: resultData[i].juridiction,
             annee:resultData[i].annee,
             typeStructure: resultData[i].typeStructure,
-            etatDossier: resultData[i].etatDossier,
          });
 
          plumitif.save(() => {
@@ -49,7 +44,8 @@ url.map(async url => {
 
                mongoose.disconnect()
                   .then(() => {
-                     console.log("Collection importée avec succès et déconnection à MongoDb");
+                     console.log("Données importées dans la collection avec succès");
+                     console.log("Déconnection à MongoDb");
                      process.exit()
                   })
                   .catch(error => console.log(error)) 
