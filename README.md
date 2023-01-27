@@ -1,6 +1,8 @@
-# NodeJS, Express, Mongoose and MongoDB
+# Seed NodeJS, Express, Mongoose and MongoDB
 
-Alimenter une collection MongoDb à partir d'une API externe qui démarre à chaque 30 secondes à l'aide de node-cron
+Alimenter une collection MongoDb à partir d'une API externe. 
+
+À l'aide de node-cron, un céduleur démarre la tâche d'alimentation toutes les 30 secondes 
 
 **Usage**
 1. Installer MongoDb
