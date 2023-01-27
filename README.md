@@ -5,7 +5,7 @@ Alimenter une collection MongoDb à partir d'une API externe.
 À l'aide de `node-cron`, un céduleur démarre la tâche d'alimentation toutes les 30 secondes 
 
 **Usage**
-1. Installer MongoDb
+1. Installer MongoDb Community
 2. Créer la base de données `plumitifs`
 3. Créer les collections `dossiers` et `sejs`
 4. Importer dans la collection `dossiers` un dataset de départ
